@@ -1,14 +1,12 @@
-/* Base styles for all pages */
 body {
     margin: 0;
-    padding-left: 220px; /* Leaves room for fixed sidebar */
+    padding-left: 220px;
     font-family: Arial, sans-serif;
-    font-size: 16pt; /* Larger than default 12pt */
-    background-color: #f0f4f8; /* Non-white, non-black background */
+    font-size: 16pt;
+    background-color: #f0f4f8;
     color: #333;
 }
 
-/* Fixed Sidebar Navigation */
 .sidebar {
     position: fixed;
     top: 0;
@@ -22,7 +20,6 @@ body {
     z-index: 1000;
 }
 
-/* Styled Sidebar Links */
 .sidebar a {
     display: block;
     padding: 10px 15px;
@@ -32,7 +29,6 @@ body {
     font-weight: bold;
 }
 
-/* Non-generic styling for visited and unvisited links */
 .sidebar a:link {
     color: #38bdf8;
     background-color: #0f172a;
@@ -48,7 +44,6 @@ body {
     background-color: #2563eb;
 }
 
-/* Main Content Padding */
 .content {
     padding: 20px;
 }
