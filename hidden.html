@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hidden Text Page</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Capitalizes first line of each paragraph regardless of screen size */
+        p::first-line {
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+
+        p {
+            line-height: 1.6;
+            margin-bottom: 20px;
+            background: #ffffff;
+            padding: 15px;
+            border-radius: 6px;
+        }
+
+        /* Hidden word baseline style */
+        .secret-word {
+            visibility: hidden;
+            color: #d97706;
+            font-weight: bold;
+            cursor: pointer;
+            border-bottom: 1px dashed #d97706;
+        }
+
+        /* Interactive reveal trigger container */
+        .reveal-trigger {
+            display: inline-block;
+            background-color: #e2e8f0;
+            border: 1px solid #cbd5e1;
+            padding: 0 4px;
+            border-radius: 4px;
+            cursor: pointer;
+            user-select: none;
+        }
+
+        /* Prevent text selection from highlighting hidden content */
+        .secret-word::selection {
+            background: transparent;
+            color: transparent;
+        }
+    </style>
+</head>
+<body>
+
+    <nav class="sidebar">
+        <a href="index.html">Home</a>
+        <a href="images.html">Images</a>
+        <a href="hidden.html">Hidden Text</a>
+    </nav>
+
+    <div class="content">
+        <h2>Interactive Paragraphs</h2>
+        <p>Click on the bracketed markers <code>[?]</code> to reveal hidden words embedded across the text.</p>
+
+        <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            <span class="reveal-trigger" onclick="reveal('word1')">[?] <span id="word1" class="secret-word">ALPHA</span></span>
+            Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.
+        </p>
+
+        <p>
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. 
+            <span class="reveal-trigger" onclick="reveal('word2')">[?] <span id="word2" class="secret-word">BRAVO</span></span>
+            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        </p>
+
+        <p>
+            Curabitur pretium tincidunt lacus. Nulla gravida orci a odio. 
+            <span class="reveal-trigger" onclick="reveal('word3')">[?] <span id="word3" class="secret-word">CHARLIE</span></span>
+            Nullam varius, turpis et commodo pharetra, est eros bibendum elit, nec luctus magna felis sollicitudin mauris.
+        </p>
+
+        <p>
+            Integer in mauris eu nibh euismod gravida. Duis ac tellus et risus vulputate vehicula. 
+            <span class="reveal-trigger" onclick="reveal('word4')">[?] <span id="word4" class="secret-word">DELTA</span></span>
+            Donec lobortis risus a elit. Etiam sit amet orci eget eros faucibus tincidunt.
+        </p>
+
+        <p>
+            Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; 
+            <span class="reveal-trigger" onclick="reveal('word5')">[?] <span id="word5" class="secret-word">ECHO</span></span>
+            Sed aliquam, nisi quis porttitor congue, elit erat euismod orci, ac placerat dolor lectus quis orci.
+        </p>
+    </div>
+
+    <script>
+        function reveal(id) {
+            var el = document.getElementById(id);
+            el.style.visibility = 'visible';
+        }
+    </script>
+
+</body>
+</html>
